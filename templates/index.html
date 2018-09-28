@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <!-- 此处/static/不是静态文件的目录，而是配置文件中STATIC_URL的值 -->
+    <script src="/static/js/jquery-3.3.1.js" ></script>
+</head>
+<body>
+    <h3 style="background-color: antiquewhite;color:black;" >请登录网站，再继续操作。</h3>
+    <form action="/index/" method="post" >
+        <input type="text" name="username" />
+        <input type="password" name="password" />
+        <input type="submit" value="登录" />
+    </form>
+</body>
+</html>
