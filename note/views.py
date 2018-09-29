@@ -43,4 +43,4 @@ def index(request):
         # return HttpResponse("欢迎来到时光笔记！")
         # 2、返回html文件。当你想返回一个html文件时，就要用render方法来渲染（其实就是打包的意思）。render是django提供的方法和规则，就是这个用法
         # 第一个参数是固定的，第二个参数指定要返回的html文件
-        return render(request, "index.html")
+        return render(request, "index1.html")

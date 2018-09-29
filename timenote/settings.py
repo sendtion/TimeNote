@@ -68,6 +68,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'builtins':[
+                'django.templatetags.static',
+            ]
         },
     },
 ]
@@ -137,7 +140,7 @@ USE_TZ = True
 STATIC_URL = '/static/'  # 必须以/开始和结尾，否则会报错，可以是：/sdc/static/
 
 # 新建一行，写上这个固定的全局变量名，赋值一个元组。
-STATICFILES_DIR = (
+STATICFILES_DIRS = (
     # static和静态文件目录的名字对应，和html文件中的引用路径无关。因为是元组，所以后面的逗号不能省略。
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static').replace('\\', '/'),
 )
