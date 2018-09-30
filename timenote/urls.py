@@ -23,6 +23,7 @@ from note import views  # 需要先导入对应app的views文件
 
 urlpatterns = [
     # path('admin/', admin.site.urls),    # admin后台的路由，先注释掉
-    path('', views.index),      # 访问地址：http://127.0.0.1:8000
-    path('index/', views.index),        # 访问地址：http://127.0.0.1:8000/index
+    path('', views.index),  # 访问地址：http://127.0.0.1:8000
+    path('index/', views.index),  # 访问地址：http://127.0.0.1:8000/index
+    path('note_list/', views.note_list),  # 访问地址：http://127.0.0.1:8000/note_list
 ]

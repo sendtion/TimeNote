@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录成功</title>
+</head>
+<body>
+    <p>登录成功，欢迎您，{{ user }}！</p>
+    <p>所有用户展示</p>
+    <table border="1" >
+        <thead>
+            <th>用户名</th>
+            <th>密码</th>
+        </thead>
+        <tbody>
+            {% for item in data %}
+                <tr>
+                    <td>{{ item.user }}</td>
+                    <td>{{ item.pwd }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

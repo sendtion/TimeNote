@@ -11,6 +11,24 @@ user_list = [
     {'user': 'tom', 'pwd': '456'},
 ]
 
+group_list = [
+    {'group_name': '默认笔记', 'group_id': '1'},
+    {'group_name': '我的日记', 'group_id': '2'},
+    {'group_name': '旅游的路上', 'group_id': '3'},
+    {'group_name': '微信公众号', 'group_id': '4'},
+    {'group_name': '城市印记', 'group_id': '5'},
+    {'group_name': '城市印记', 'group_id': '5'},
+    {'group_name': '城市印记', 'group_id': '5'},
+    {'group_name': '城市印记', 'group_id': '5'},
+    {'group_name': '城市印记', 'group_id': '5'},
+    {'group_name': '城市印记', 'group_id': '5'},
+    {'group_name': '城市印记', 'group_id': '5'},
+    {'group_name': '城市印记', 'group_id': '5'},
+    {'group_name': '城市印记', 'group_id': '5'},
+    {'group_name': '城市印记', 'group_id': '5'},
+    {'group_name': '城市印记', 'group_id': '5'},
+]
+
 
 # request 参数必须有，名字是类似self的默认规则，可以改。它封装了用户请求的所有内容。
 def index(request):
@@ -43,4 +61,16 @@ def index(request):
         # return HttpResponse("欢迎来到时光笔记！")
         # 2、返回html文件。当你想返回一个html文件时，就要用render方法来渲染（其实就是打包的意思）。render是django提供的方法和规则，就是这个用法
         # 第一个参数是固定的，第二个参数指定要返回的html文件
-        return render(request, "index1.html")
+        return render(request, "index1.html", {'group_list': group_list})
+
+
+def note_list(request):
+    if request.method == 'GET':
+        group_id = request.GET.get('group_id', 0)
+        print(group_id)
+        if int(group_id) > 0:
+            return render(request, 'note_list.html')
+        else:
+            return HttpResponse('出现异常')
+    else:
+        return HttpResponse('没有查询到笔记列表')
